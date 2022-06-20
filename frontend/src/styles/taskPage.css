@@ -7,7 +7,7 @@
 body > #root > div {
   font-family: 'Roboto';
   font-size: 62.5%;
-  height: 100vh;
+  height: 100%;
 }
 
 p {
@@ -40,13 +40,16 @@ p {
   }
 }
 
+#offcanvasNavbar {
+  display: none;
+}
+
 .navbar .nav-link,
 .offcanvas-body a {
   color: black !important;
 }
 
 .tasks {
-  height: 100%;
   margin-left: 25.26%;
   width: 49.48%;
 }
