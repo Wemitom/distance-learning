@@ -1,0 +1,32 @@
+.chat-messages {
+  margin-left: 25.26%;
+  width: 49.48%;
+  position: relative;
+}
+
+.message {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  max-width: 60%;
+  word-break: break-all;
+}
+
+.message-row {
+  float: left;
+  width: 100%;
+  display: flex;
+  margin-left: 18px;
+}
+
+.message-block {
+  width: 100%;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .chat-messages {
+    margin-left: 0;
+    width: 100%;
+  }
+}

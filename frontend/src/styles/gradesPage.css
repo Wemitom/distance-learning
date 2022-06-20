@@ -1,0 +1,12 @@
+.grades-table {
+  margin-left: 25.26%;
+  width: 49.48%;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .grades-table {
+    margin-left: 0;
+    width: 100%;
+  }
+}

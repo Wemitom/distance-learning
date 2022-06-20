@@ -1,0 +1,11 @@
+.results-card {
+  margin-left: 25.26%;
+  width: 49.48%;
+}
+
+@media (max-width: 600px) {
+  .results-card {
+    margin-left: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+* {
+  margin: 0;
+}
+
+body > #root > div {
+  font-family: 'Roboto';
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+.header {
+  width: 100%;
+  height: 5.8em;
+  background-color: #3a98db;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.nav-offcanvas {
+  display: contents !important;
+}
+
+.player-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-offcanvas {
+    display: none !important;
+  }
+}
+
+.navbar .nav-link,
+.offcanvas-body a {
+  color: black !important;
+}
+
+.tasks {
+  height: 100%;
+  margin-left: 25.26%;
+  width: 49.48%;
+}
+
+.task-card {
+  position: relative;
+  height: auto;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.5em;
+}
+
+.bg-blue {
+  background-color: #3a98db;
+}
+
+.task-number {
+  font-size: 3.6em;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.task-title {
+  font-size: 2.4em;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.task-description {
+  font-size: 1.4em;
+  word-break: break-word;
+}
+
+.task-files {
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+.task-report {
+  font-size: 1.8em;
+  font-weight: 500;
+}
+
+.greybox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(169, 169, 169, 0.7);
+  border: none;
+  z-index: 1;
+  top: 0;
+  left: 0.01em;
+}
+
+.dropzone {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-top: 2%;
+  margin-bottom: 2em;
+  grid-template-columns: 100%;
+}
+
+.dropzone-block {
+  height: 100%;
+  width: 70%;
+  border: 3px dashed black;
+  cursor: pointer;
+  background-image: url('../icons/plus.svg');
+  background-position: center;
+  background-size: 5em;
+  background-repeat: no-repeat;
+  margin-top: 1.2%;
+  position: relative;
+}
+
+.task-card.greyed-out .dropzone {
+  display: none;
+}
+
+.dropzone-phone {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-top: 2%;
+  margin-bottom: 4em;
+  grid-template-columns: 100%;
+}
+
+.dropzone-modal {
+  height: 14em;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  margin-top: 2%;
+  grid-template-columns: 100%;
+}
+
+.dropzone-modal > .dropzone-block {
+  width: 100%;
+  background-size: 3em;
+  margin-top: 0;
+}
+
+.dropzone-modal > div > .file-list {
+  width: 100%;
+  font-size: 0.8em;
+}
+
+.collapsed-card {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  text-align: center;
+}
+
+.searchbar {
+  position: relative;
+}
+
+.searchbar svg {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: 25%;
+  right: 1em;
+}
+
+@media (max-width: 750px) and (min-width: 600px) {
+  .searchbar svg {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .sidebar-button {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.8em;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .sidebar-button:active {
+    background-color: rgba(23, 93, 143, 0.2);
+  }
+
+  .sidebar-svg {
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+  }
+
+  .buttons-sidebar {
+    height: 100%;
+    width: 15.78%;
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1;
+    right: 0;
+    top: 5.8em;
+    display: grid;
+    grid-template-rows: repeat(5, 11em);
+    overflow-y: auto;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 15.78%;
+    border-right: 1px solid rgba(0, 0, 0, 0.125);
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 5.8em;
+  }
+
+  .task-datetime {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    bottom: 2%;
+  }
+
+  .task-date {
+    font-size: 1.4em;
+    text-align: left;
+  }
+
+  .task-time {
+    font-size: 1.4em;
+    text-align: right;
+  }
+
+  .task-card.greyed-out > .task-description {
+    display: none;
+  }
+
+  .task-card.greyed-out > .task-files {
+    display: none;
+  }
+
+  .task-card.greyed-out > .task-report {
+    display: none;
+  }
+
+  .class-name {
+    font-size: 6.4em;
+    font-weight: bold;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 49.48%;
+    margin-left: 25.26%;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 0.2em;
+    line-height: 4rem;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #0d4166 !important;
+  }
+
+  .sidebar .accordion-item {
+    border: none !important;
+  }
+
+  .current-task {
+    background-color: rgba(92, 187, 255, 0.4);
+  }
+
+  .file-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    column-gap: 3.5em;
+    width: 70%;
+    overflow-x: auto;
+  }
+
+  .file {
+    list-style-type: none;
+  }
+
+  .file svg {
+    width: 3.5em;
+    height: 3.5em;
+  }
+
+  .expand-button {
+    display: none;
+  }
+
+  .card-info-phone {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar-button {
+    height: 100%;
+    border: none;
+    border-right: 1px solid rgba(23, 93, 143, 0.2);
+    cursor: pointer;
+    font-size: 1.2em;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #3a98db;
+    margin-top: 0;
+  }
+
+  .sidebar-svg {
+    width: 2.2em;
+    height: 2.2em;
+    pointer-events: none;
+  }
+
+  .searchbar svg {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 25%;
+    right: 1em;
+  }
+
+  .buttons-sidebar {
+    height: 10%;
+    width: 100%;
+    border-top: 1px solid rgba(23, 93, 143, 0.2);
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    display: grid;
+    background-color: #3a98db;
+    overflow-y: hidden;
+  }
+
+  .buttons-sidebar.four-buttons {
+    grid-template-columns: repeat(4, 25%);
+  }
+
+  .buttons-sidebar.three-buttons {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+
+  .buttons-sidebar.two-buttons {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .buttons-sidebar.one-button {
+    grid-template-columns: repeat(1, 100%);
+  }
+
+  .sidebar {
+    visibility: hidden;
+    height: 100%;
+    width: 15.78%;
+    border-right: 1px solid rgba(23, 93, 143, 0.2);
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 5.8em;
+  }
+
+  .task-card-phone {
+    height: 8em;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    box-sizing: unset !important;
+  }
+
+  .tasks {
+    width: 100%;
+    height: 100vh;
+    margin-left: 0;
+  }
+
+  .task-number {
+    font-size: 2.4em;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 15px;
+    width: 90%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .task-datetime {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    bottom: 5px;
+  }
+
+  .task-date {
+    font-size: 1.2em;
+    line-height: 2vh;
+    width: 70%;
+    text-align: left;
+    margin-left: 15px;
+  }
+
+  .task-time {
+    font-size: 1.2em;
+    line-height: 2vh;
+    width: 74%;
+    text-align: left;
+  }
+
+  .class-name {
+    font-size: 3.2em;
+    font-weight: bold;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 50%;
+    margin-left: 25%;
+    position: fixed;
+    top: 0.1em;
+    z-index: 1022;
+    white-space: nowrap;
+  }
+
+  .current-task {
+    background-color: rgba(23, 93, 143, 0.4);
+  }
+
+  .file {
+    list-style-type: none;
+  }
+
+  .file svg {
+    width: 3.5em;
+    height: 3.5em;
+  }
+
+  .expand-div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .expand-button {
+    background-color: transparent;
+    border: none;
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    right: 1em;
+    bottom: 0.7em;
+    transition: ease-in-out 0.5s;
+    z-index: 1;
+  }
+
+  .expand-button svg {
+    width: 3.5em;
+    height: 3.5em;
+  }
+
+  .expand-button:active svg {
+    transform: scale(1.2);
+  }
+
+  .expand-button.btn-pressed {
+    transition: ease-in-out 0.5s;
+    transform: rotate(180deg);
+    bottom: 1.5em;
+  }
+
+  .card-info-phone {
+    width: 100%;
+    height: 20em;
+  }
+
+  .file-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row;
+    column-gap: 3.5em;
+    width: 70%;
+    overflow-x: auto;
+  }
+
+  .dropzone-block {
+    height: 80%;
+    width: 70%;
+    border: 3px dashed black;
+    cursor: pointer;
+    background-image: url('../icons/plus.svg');
+    background-position: center;
+    background-size: 2.5em;
+    background-repeat: no-repeat;
+    margin-top: 1.2%;
+    position: relative;
+  }
+}

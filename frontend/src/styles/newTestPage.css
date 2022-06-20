@@ -1,0 +1,67 @@
+.questions-placeholders {
+  margin-left: 25.26%;
+  width: 49.48%;
+}
+
+.question-textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.settings-button {
+  width: 1em;
+  height: 1em;
+  background: transparent url('../icons/cogwheel.svg') center/1em auto no-repeat;
+  border: 0;
+  opacity: 0.5;
+  padding: 0.25em 0.25em;
+  border-radius: 0.25rem;
+}
+
+.settings-button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+  opacity: 1;
+}
+
+.settings-button:hover {
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.add-question-placeholder {
+  height: 10em;
+}
+
+.add-question-placeholder > button {
+  width: 100%;
+  height: 90%;
+  background: none;
+  border: 1px dashed rgba(23, 93, 143, 0.4);
+}
+
+.add-question-placeholder > button > svg {
+  width: 3em;
+  height: 3em;
+}
+
+.add-question-placeholder > button > p {
+  font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+  .questions-placeholders {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .add-question-placeholder {
+    height: 20em;
+  }
+
+  .add-question-placeholder > button {
+    height: 50%;
+  }
+}

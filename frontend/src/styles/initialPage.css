@@ -1,0 +1,12 @@
+.init-info {
+  width: 49.48%;
+  margin-left: 25.26%;
+  margin-top: 5em;
+}
+
+@media (max-width: 600px) {
+  .init-info {
+    margin-left: 0;
+    width: 100%;
+  }
+}
