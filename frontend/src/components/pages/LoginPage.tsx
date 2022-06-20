@@ -10,10 +10,11 @@ function LoginPage() {
 
   return (
     <div
-      className="w-100 h-100 d-flex justify-content-center align-items-center"
+      className="w-100 d-flex justify-content-center align-items-center"
       style={{
         background:
           'linear-gradient(0deg, rgba(23,93,143,1) 0%, rgba(92,187,255,1) 100%)',
+        height: '100vh',
       }}
     >
       <Login
