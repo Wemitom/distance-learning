@@ -8,9 +8,6 @@ const ClassSchema = new Schema({
   limit: { type: Number, min: 5 },
   accessCode: {
     type: String,
-    default: (
-      new Date().getTime() + Math.floor(Math.random() * 10000 + 1)
-    ).toString(16),
     unique: true,
   },
 });

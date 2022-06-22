@@ -1036,6 +1036,9 @@ app.post('/api/classes', async (req, res) => {
       name: req.body.name,
       author: req.query.uid,
       users: [req.query.uid],
+      accessCode: (
+        new Date().getTime() + Math.floor(Math.random() * 10000 + 1)
+      ).toString(16),
       limit: req.body.limited ? req.body.limit : Infinity,
     });
 
