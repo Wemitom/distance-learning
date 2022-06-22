@@ -31,7 +31,6 @@ const ProfileInfo = () => {
   return (
     <>
       <Card className="profile-card text-center">
-        {console.log(isMutating)}
         <Card.Header>
           <Card.Title>Информация</Card.Title>
         </Card.Header>

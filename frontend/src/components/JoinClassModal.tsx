@@ -33,6 +33,7 @@ export const JoinClassModal = ({
     },
     {
       onSuccess: ({ data }) => {
+        localStorage.setItem('lastClass', data._id);
         navigate(`/class/${data._id}`);
         handleClose();
       },
