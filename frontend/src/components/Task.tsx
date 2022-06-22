@@ -43,7 +43,7 @@ function Task({
   const [videoOpened, setVideoOpened] = useState(false);
   const [taskSettingsOpened, setTaskSettingsOpened] = useState(false);
   const [videoName, setVideoName] = useState<string>('');
-  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid);
+  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid, false);
   const files = uploadedFiles.map((file) => file.name);
   const date = new Date(taskDate);
   const navigate = useNavigate();

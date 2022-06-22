@@ -1,12 +1,6 @@
 import { signOut } from 'firebase/auth';
 import { useState } from 'react';
-import {
-  Nav,
-  Navbar,
-  NavDropdown,
-  Offcanvas,
-  Stack,
-} from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown, Offcanvas, Stack } from 'react-bootstrap';
 import { useNavigate, NavLink, useParams } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import useCurrentPath from '../hooks/useCurrentPath';
@@ -18,7 +12,7 @@ import SidebarAccordion from './SidebarAccordion';
 
 function Header() {
   const { classId } = useParams();
-  const { data } = useAuth(firebaseAuth.currentUser?.uid);
+  const { data } = useAuth(firebaseAuth.currentUser?.uid, false);
   const [modalOpened, setModalOpened] = useState(false);
   const navigate = useNavigate();
   const routePattern = useCurrentPath();

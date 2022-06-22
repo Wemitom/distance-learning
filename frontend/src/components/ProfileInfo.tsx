@@ -8,6 +8,7 @@ import {
   Popover,
   Spinner,
 } from 'react-bootstrap';
+import { useIsMutating } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import useClasses from '../hooks/useClasses';
@@ -16,9 +17,11 @@ import { JoinClassModal } from './JoinClassModal';
 import { NewClassModal } from './NewClassModal';
 
 const ProfileInfo = () => {
+  const isMutating = useIsMutating() !== 0;
   const { data, isLoading } = useClasses();
   const { data: authData, isLoading: isLoadingAuth } = useAuth(
-    firebaseAuth.currentUser?.uid
+    firebaseAuth.currentUser?.uid,
+    isMutating
   );
   const [joinClassOpened, setJoinClassOpened] = useState(false);
   const [createClassOpened, setCreateClassOpened] = useState(false);
@@ -28,6 +31,7 @@ const ProfileInfo = () => {
   return (
     <>
       <Card className="profile-card text-center">
+        {console.log(isMutating)}
         <Card.Header>
           <Card.Title>Информация</Card.Title>
         </Card.Header>

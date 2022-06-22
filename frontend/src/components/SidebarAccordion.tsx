@@ -57,7 +57,7 @@ const SidebarAccordion = ({
   const { data: classes, isLoading: isLoadingClasses } = useClasses();
   const navigate = useNavigate();
   const routePattern = useCurrentPath();
-  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid);
+  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid, false);
   const { data: usersData, isLoading: isLoadingUsers } = useClassUsers(
     classId || '',
     firebaseAuth.currentUser?.uid,

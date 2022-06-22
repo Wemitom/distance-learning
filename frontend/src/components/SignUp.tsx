@@ -28,13 +28,13 @@ function SignUp({
     } else {
       try {
         setSendingRequest(true);
-        const { user } = await createUserWithEmailAndPassword(
-          firebaseAuth,
-          email,
-          password
+        createUserWithEmailAndPassword(firebaseAuth, email, password).then(
+          async (userCredential) => {
+            const { user } = userCredential;
+            const idToken = await user.getIdToken(true);
+            await addAccount.mutateAsync({ idToken });
+          }
         );
-        const idToken = await user.getIdToken(true);
-        await addAccount.mutateAsync({ idToken });
       } catch (error) {
         setSendingRequest(false);
       }

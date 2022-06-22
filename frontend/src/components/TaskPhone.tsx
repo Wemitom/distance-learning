@@ -49,7 +49,7 @@ function TaskPhone({
   const [taskSettingsOpened, setTaskSettingsOpened] = useState(false);
   const [videoName, setVideoName] = useState<string>('');
   const files = uploadedFiles.map((file) => file.name);
-  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid);
+  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid, false);
   const date = new Date(taskDate);
   const [cardExpanded, setCardExpanded] = useState<boolean>(false);
   const navigate = useNavigate();

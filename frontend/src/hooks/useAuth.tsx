@@ -17,10 +17,10 @@ const getUsers = async (): Promise<UserInfoInterface | null> => {
   return data;
 };
 
-export default function useAuth(uid: string | undefined) {
-  return useQuery(['users', uid], getUsers, {
+export default function useAuth(uid: string | undefined, mutating: boolean) {
+  return useQuery(['users', uid, mutating], getUsers, {
     refetchOnWindowFocus: false,
-    enabled: !!uid,
+    enabled: !!uid && !mutating,
     staleTime: 5000,
   });
 }

@@ -20,7 +20,7 @@ const GradesPage = () => {
     isError: isErrorName,
   } = useClassName(classId || '');
   const [selectedType, setSelectedType] = useState<TaskType>('Homework');
-  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid);
+  const { data: authData } = useAuth(firebaseAuth.currentUser?.uid, false);
 
   return (
     <>

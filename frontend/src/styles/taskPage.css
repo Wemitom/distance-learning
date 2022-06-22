@@ -40,8 +40,10 @@ p {
   }
 }
 
-#offcanvasNavbar {
-  display: none;
+@media (min-width: 576px) {
+  .navbar-expand-sm .offcanvas {
+    display: none;
+  }
 }
 
 .navbar .nav-link,
