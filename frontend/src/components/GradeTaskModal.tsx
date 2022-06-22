@@ -42,7 +42,7 @@ const GradeTaskModal = ({
   const gradeTaskMutation = useMutation(
     ({ idToken }: { idToken: string }) => {
       return axios.patch(
-        'http://localhost:5000/api/grades',
+        `https://distance-learning.herokuapp.com/api/grades`,
         {
           classId: classId,
           uid: uid,

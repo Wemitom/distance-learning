@@ -11,7 +11,7 @@ const getReports = async ({
   const [, uid, taskId] = queryKey;
   const idToken = (await firebaseAuth.currentUser?.getIdToken(true)) || '0';
   const { data } = await axios.get(
-    `http://localhost:5000/api/reports?userId=${uid}&taskId=${taskId}`,
+    `https://distance-learning.herokuapp.com/api/reports?userId=${uid}&taskId=${taskId}`,
     {
       headers: { Authorization: idToken },
     }

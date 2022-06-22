@@ -8,7 +8,7 @@ const getUsers = async (): Promise<UserInfoInterface | null> => {
   if (firebaseAuth.currentUser !== null) {
     const idToken = await firebaseAuth.currentUser?.getIdToken(true);
     data = (
-      await axios.get(`http://localhost:5000/api/users`, {
+      await axios.get(`https://distance-learning.herokuapp.com/api/users`, {
         headers: { Authorization: idToken },
       })
     ).data;

@@ -12,7 +12,7 @@ export default function useTestInfo(
       const idToken = (await firebaseAuth.currentUser?.getIdToken(true)) || '0';
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/test/info?_id=${testId}`,
+        `https://distance-learning.herokuapp.com/api/test/info?_id=${testId}`,
         {
           headers: { Authorization: `${idToken}` },
         }

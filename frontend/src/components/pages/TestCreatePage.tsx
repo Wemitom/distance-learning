@@ -60,7 +60,7 @@ function TestEditPage() {
       tokenId: string;
     }) =>
       axios.put(
-        `http://localhost:5000/api/test?state=${testState}`,
+        `https://distance-learning.herokuapp.com/api/test?state=${testState}`,
         {
           questions: testConfig.questions,
           _id: testId,

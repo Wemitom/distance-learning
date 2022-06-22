@@ -66,11 +66,14 @@ const SidebarAccordion = ({
 
   const deleteClassMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
-      axios.delete(`http://localhost:5000/api/classes?classId=${classId}`, {
-        headers: {
-          Authorization: idToken,
-        },
-      }),
+      axios.delete(
+        `https://distance-learning.herokuapp.com/api/classes?classId=${classId}`,
+        {
+          headers: {
+            Authorization: idToken,
+          },
+        }
+      ),
     {
       onSuccess: () => navigate('/profile'),
     }
@@ -79,7 +82,7 @@ const SidebarAccordion = ({
   const removeParticipantMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.put(
-        `http://localhost:5000/api/classes?classId=${classId}`,
+        `https://distance-learning.herokuapp.com/api/classes?classId=${classId}`,
         {
           uid: removedUserUid,
         },
@@ -97,7 +100,7 @@ const SidebarAccordion = ({
   const quitClassMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.patch(
-        `http://localhost:5000/api/classes?action=quit&classId=${classId}`,
+        `https://distance-learning.herokuapp.com/api/classes?action=quit&classId=${classId}`,
         {},
         {
           headers: {

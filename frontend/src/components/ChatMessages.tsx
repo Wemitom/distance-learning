@@ -29,7 +29,7 @@ const ChatMessages = () => {
       previousMessages?: MessageInterface[];
     }) => {
       return axios.post(
-        `http://localhost:5000/api/chat?classId=${classId}`,
+        `https://distance-learning.herokuapp.com/api/chat?classId=${classId}`,
         {
           message,
           receiverUid: dialogId,

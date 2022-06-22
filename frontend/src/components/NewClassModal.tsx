@@ -23,7 +23,7 @@ export const NewClassModal = ({
   const addNewClassMutation = useMutation(
     ({ idToken }: { idToken: string }) => {
       return axios.post(
-        'http://localhost:5000/api/classes',
+        `https://distance-learning.herokuapp.com/api/classes`,
         {
           name: className,
           limit: limit,

@@ -5,9 +5,12 @@ import { firebaseAuth } from '../components/Firebase';
 
 const getClasses = async (): Promise<ClassNameInterface[]> => {
   const idToken = (await firebaseAuth.currentUser?.getIdToken(true)) || '0';
-  const { data } = await axios.get(`http://localhost:5000/api/classes`, {
-    headers: { Authorization: idToken },
-  });
+  const { data } = await axios.get(
+    `https://distance-learning.herokuapp.com/api/classes`,
+    {
+      headers: { Authorization: idToken },
+    }
+  );
 
   return data;
 };

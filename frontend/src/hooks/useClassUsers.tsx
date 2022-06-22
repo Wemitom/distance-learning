@@ -11,7 +11,7 @@ const getUsers = async ({
   const [, classId] = queryKey;
   const idToken = (await firebaseAuth.currentUser?.getIdToken(true)) || '0';
   const { data } = await axios.get(
-    `http://localhost:5000/api/classes/users?classId=${classId}`,
+    `https://distance-learning.herokuapp.com/api/classes/users?classId=${classId}`,
     {
       headers: { Authorization: idToken },
     }

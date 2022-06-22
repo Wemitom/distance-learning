@@ -20,7 +20,7 @@ export const JoinClassModal = ({
   const joinNewClassMutation = useMutation(
     ({ idToken }: { idToken: string }) => {
       return axios.patch(
-        'http://localhost:5000/api/classes?action=join',
+        `https://distance-learning.herokuapp.com/api/classes?action=join`,
         {
           accessCode,
         },

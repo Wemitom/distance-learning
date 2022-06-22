@@ -27,7 +27,7 @@ export const Question = ({
   const nextQuestionMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.put(
-        `http://localhost:5000/api/test/started/next?_id=${testId}`,
+        `https://distance-learning.herokuapp.com/api/test/started/next?_id=${testId}`,
         { answer: chosenAnswer },
         {
           headers: { Authorization: idToken },
@@ -50,7 +50,7 @@ export const Question = ({
   const submitTestMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.put(
-        `http://localhost:5000/api/test/started/submit?_id=${testId}`,
+        `https://distance-learning.herokuapp.com/api/test/started/submit?_id=${testId}`,
         {},
         {
           headers: { Authorization: idToken },

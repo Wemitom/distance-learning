@@ -38,7 +38,7 @@ const TaskSettings = ({
   const patchTaskMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.patch(
-        `http://localhost:5000/api/tasks?classId=${classId}&taskId=${taskId}`,
+        `https://distance-learning.herokuapp.com/api/tasks?classId=${classId}&taskId=${taskId}`,
         {
           type: newTaskType,
           taskNumber: newTaskNumber,

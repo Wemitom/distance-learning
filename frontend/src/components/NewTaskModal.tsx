@@ -59,7 +59,7 @@ function NewTaskModal({
   const addTaskMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.post(
-        `http://localhost:5000/api/tasks?classId=${classId}`,
+        `https://distance-learning.herokuapp.com/api/tasks?classId=${classId}`,
         {
           _id: taskId.toString(),
           type: taskType,
@@ -120,7 +120,7 @@ function NewTaskModal({
 
       if (files.length !== 0) {
         return axios.post(
-          `http://localhost:5000/api/files?type=tasks&taskId=${taskId}`,
+          `https://distance-learning.herokuapp.com/api/files?type=tasks&taskId=${taskId}`,
           formData,
           {
             headers: {

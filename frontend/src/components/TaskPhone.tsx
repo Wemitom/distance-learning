@@ -82,7 +82,7 @@ function TaskPhone({
 
       if (files.length !== 0) {
         return axios.post(
-          `http://localhost:5000/api/files?type=reports&taskId=${taskId}&classId=${classId}`,
+          `https://distance-learning.herokuapp.com/api/files?type=reports&taskId=${taskId}&classId=${classId}`,
           formData,
           {
             headers: {
@@ -122,7 +122,7 @@ function TaskPhone({
   const addReportMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.put(
-        `http://localhost:5000/api/tasks?change=report&classId=${classId}`,
+        `https://distance-learning.herokuapp.com/api/tasks?change=report&classId=${classId}`,
         {
           reports: files.join('|'),
           _id: _id,
@@ -151,7 +151,7 @@ function TaskPhone({
   const startTestMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.post(
-        `http://localhost:5000/api/test/start?_id=${_id}`,
+        `https://distance-learning.herokuapp.com/api/test/start?_id=${_id}`,
         {},
         { headers: { Authorization: idToken } }
       ),

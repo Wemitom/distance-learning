@@ -45,7 +45,7 @@ function SignUp({
 
   const addAccount = useMutation(({ idToken }: { idToken: string }) =>
     axios.post(
-      'http://localhost:5000/api/users',
+      'https://distance-learning.herokuapp.com/api/users',
       {
         userName: name,
         userSurname: surname,

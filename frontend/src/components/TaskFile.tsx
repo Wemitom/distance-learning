@@ -71,7 +71,7 @@ function TaskFile({
                 const idToken =
                   (await firebaseAuth.currentUser?.getIdToken(false)) || '';
                 const { data } = await axios.get(
-                  `http://localhost:5000/api/files/${fileType}/${taskId}/${encodeURI(
+                  `https://distance-learning.herokuapp.com/api/files/${fileType}/${taskId}/${encodeURI(
                     fileName
                   )}${!!uid ? `?userId=${uid}` : ''}`,
                   { headers: { Authorization: idToken }, responseType: 'blob' }

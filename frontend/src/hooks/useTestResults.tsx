@@ -11,7 +11,7 @@ const getTestResults = async ({
   const [, testId, uid] = queryKey;
   const idToken = (await firebaseAuth.currentUser?.getIdToken(true)) || '0';
   const { data } = await axios.get(
-    `http://localhost:5000/api/test/results?_id=${testId}${
+    `https://distance-learning.herokuapp.com/api/test/results?_id=${testId}${
       !!uid ? `&userId=${uid}` : ''
     }`,
     {

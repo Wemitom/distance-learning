@@ -12,7 +12,7 @@ export default function useCurrentQuestion(
       const idToken = (await firebaseAuth.currentUser?.getIdToken(true)) || '0';
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/test/started/question?_id=${testId}`,
+        `https://distance-learning.herokuapp.com/api/test/started/question?_id=${testId}`,
         {
           headers: { Authorization: `${idToken}` },
         }

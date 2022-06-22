@@ -26,7 +26,7 @@ function TestPage() {
   const submitTestMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.put(
-        `http://localhost:5000/api/test/started/submit?_id=${testId}`,
+        `https://distance-learning.herokuapp.com/api/test/started/submit?_id=${testId}`,
         {
           chosenAnswers,
         },

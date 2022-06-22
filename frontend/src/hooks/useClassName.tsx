@@ -10,7 +10,7 @@ export default function useClassName(classId: string): UseQueryResult<string> {
       const [, classId] = queryKey;
 
       const { data } = await axios.get(
-        `http://localhost:5000/api/class-name?classId=${classId}`,
+        `https://distance-learning.herokuapp.com/api/class-name?classId=${classId}`,
         {
           headers: { Authorization: `${idToken}` },
         }

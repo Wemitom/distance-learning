@@ -29,7 +29,7 @@ function Tasks({
   const deleteTaskMutation = useMutation(
     ({ idToken }: { idToken: string }) =>
       axios.delete(
-        `http://localhost:5000/api/tasks?taskId=${deletedTaskId}&classId=${classId}`,
+        `https://distance-learning.herokuapp.com/api/tasks?taskId=${deletedTaskId}&classId=${classId}`,
         {
           headers: { Authorization: idToken },
         }
