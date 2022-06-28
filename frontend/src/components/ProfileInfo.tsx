@@ -19,18 +19,24 @@ import { NewClassModal } from './NewClassModal';
 const ProfileInfo = () => {
   const isMutating = useIsMutating() !== 0;
   const { data, isLoading } = useClasses();
-  const { data: authData, isLoading: isLoadingAuth } = useAuth(
-    firebaseAuth.currentUser?.uid,
-    isMutating
-  );
+  const {
+    data: authData,
+    isLoading: isLoadingAuth,
+    refetch,
+  } = useAuth(firebaseAuth.currentUser?.uid, isMutating);
   const [joinClassOpened, setJoinClassOpened] = useState(false);
   const [createClassOpened, setCreateClassOpened] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const navigate = useNavigate();
 
+  if (authData === null) {
+    refetch();
+  }
+
   return (
     <>
       <Card className="profile-card text-center">
+        {console.log(isMutating)}
         <Card.Header>
           <Card.Title>Информация</Card.Title>
         </Card.Header>

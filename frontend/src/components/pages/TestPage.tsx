@@ -116,7 +116,6 @@ function TestPage() {
               }`}</p>
             )}
           />
-          );
           {testInfo?.testComplete && <Navigate to="results" />}
         </>
       )}

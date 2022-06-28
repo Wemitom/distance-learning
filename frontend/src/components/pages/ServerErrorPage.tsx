@@ -7,8 +7,8 @@ const ServerErrorPage = () => {
 
   return (
     <div
-      className="w-100 h-100 justify-content-center align-items-center"
-      style={{ display: 'inline-flex' }}
+      className="w-100 justify-content-center align-items-center"
+      style={{ display: 'inline-flex', height: '100vh !important' }}
     >
       <h1>Ошибка подключения к серверу</h1>
     </div>

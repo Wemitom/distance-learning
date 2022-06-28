@@ -1,7 +1,4 @@
-import {
-  QuestionInterface,
-  TestConfigInterface,
-} from '../interfaces/interfaces';
+import { TestConfigInterface } from '../interfaces/interfaces';
 import { ReactComponent as PlusIcon } from '../icons/plus.svg';
 
 function AddQuestionPlaceholder({

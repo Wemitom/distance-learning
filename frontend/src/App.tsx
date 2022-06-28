@@ -12,7 +12,6 @@ import TasksPage from './components/pages/TasksPage';
 import ProfilePage from './components/pages/ProfilePage';
 import GradesPage from './components/pages/GradesPage';
 import NoMatchPage from './components/pages/NoMatchPage';
-import SettingsPage from './components/pages/SettingsPage';
 import ChatPage from './components/pages/ChatPage';
 import TeacherResultPage from './components/pages/TeacherResultPage';
 
@@ -61,10 +60,6 @@ function App() {
             element={
               loggedIn ? <TeacherResultPage /> : <Navigate to="/login" />
             }
-          />
-          <Route
-            path="/class/:classId/settings"
-            element={loggedIn ? <SettingsPage /> : <Navigate to="/login" />}
           />
           <Route
             path="/class/:classId/chat"
